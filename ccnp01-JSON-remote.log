@@ -1,0 +1,33 @@
+
+
+1255  apt-get install python3-pip
+
+
+
+1272  pip3 install cryptography
+
+1274  pip3 install --upgrade pip
+
+1275  pip3 install paramiko
+
+1277  pip3 install --upgrade paramiko
+
+1278  pip3 show paramiko
+
+1281  pip3 install netmiko
+
+^^source: http://www.packetnotes.com/install-automation-tools/
+~ Install Several Automation Tools on Ubuntu 16.04
+
+
+--- Log into Nexus 9000v - DevNet Nexus always on sandbox
+
+• DNS name: sbx-nxos-mgmt.cisco.com
+• Protocol: SSH
+• Port: 8181
+• Username: admin
+• Password: Admin_1234!
+---
+
+• Example:
+• Mac: ssh -p 8181 admin@sbx-nxos-mgmt.cisco.com

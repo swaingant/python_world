@@ -1,3 +1,16 @@
+--- Log into Nexus 9000v
+!
+Use the DevNet Nexus always on sandbox
+• DNS name: sbx-nxos-mgmt.cisco.com
+• Protocol: SSH
+• Port: 8181
+• Username: admin
+• Password: Admin_1234!
+
+• Example:
+• Mac: ssh -p 8181 admin@sbx-nxos-mgmt.cisco.com
+---
+
 
 
 sbx-n9kv-ao# python 
