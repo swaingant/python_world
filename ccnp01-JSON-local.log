@@ -1,0 +1,205 @@
+
+
+sbx-n9kv-ao# python 
+Python 2.7.11 (default, Feb 26 2018, 03:34:16) 
+[GCC 4.6.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> from cli import *
+>>> 
+>>> vinput1 = "show ip int br | json-pretty"
+
+
+>>> voutput1 = cli(vinput1)
+>>> vjson1 = json.loads(voutput1)
+
+
+>>> # Lets compare outputs - VARIABLE only:
+... 
+
+
+>>> voutput1
+'{\n    "TABLE_intf": {\n        "ROW_intf": [\n            {\n                "vrf-name-out": "default", \n                "intf-name": "Vlan100", \n                "proto-state": "down", \n                "link-state": "down", \n                "admin-state": "down", \n                "iod": "7", \n                "prefix": "172.16.100.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Vlan101", \n                "proto-state": "down", \n                "link-state": "down", \n                "admin-state": "down", \n                "iod": "6", \n                "prefix": "172.16.101.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Vlan102", \n                "proto-state": "down", \n                "link-state": "down", \n                "admin-state": "down", \n                "iod": "5", \n                "prefix": "172.16.102.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Vlan103", \n                "proto-state": "down", \n                "link-state": "down", \n                "admin-state": "down", \n                "iod": "4", \n                "prefix": "172.16.103.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Vlan104", \n                "proto-state": "down", \n                "link-state": "down", \n                "admin-state": "down", \n                "iod": "3", \n                "prefix": "172.16.104.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Vlan105", \n                "proto-state": "down", \n                "link-state": "down", \n                "admin-state": "down", \n                "iod": "2", \n                "prefix": "172.16.105.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Lo1", \n                "proto-state": "up", \n                "link-state": "up", \n                "admin-state": "up", \n                "iod": "13", \n                "prefix": "172.16.0.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Lo2", \n                "proto-state": "up", \n                "link-state": "up", \n                "admin-state": "up", \n                "iod": "82", \n                "prefix": "2.2.2.2", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Lo3", \n                "proto-state": "up", \n                "link-state": "up", \n                "admin-state": "up", \n                "iod": "83", \n                "prefix": "3.3.3.3", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Lo4", \n                "proto-state": "up", \n                "link-state": "up", \n                "admin-state": "up", \n                "iod": "84", \n                "prefix": "4.4.4.4", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Lo98", \n                "proto-state": "up", \n                "link-state": "up", \n                "admin-state": "up", \n                "iod": "15", \n                "prefix": "10.98.98.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Lo99", \n                "proto-state": "up", \n                "link-state": "up", \n                "admin-state": "up", \n                "iod": "16", \n                "prefix": "10.99.99.1", \n                "ip-disabled": "FALSE"\n            }, \n            {\n                "vrf-name-out": "default", \n                "intf-name": "Eth1/5", \n                "proto-state": "down", \n                "link-state": "down", \n                "admin-state": "down", \n                "iod": "21", \n                "prefix": "172.16.1.1", \n                "ip-disabled": "FALSE"\n            }\n        ]\n    }\n}\n'
+>>> 
+
+
+>>> vjson1                       
+{u'TABLE_intf': {u'ROW_intf': [{u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan100', u'prefix': u'172.16.100.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'7'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan101', u'prefix': u'172.16.101.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'6'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan102', u'prefix': u'172.16.102.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'5'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan103', u'prefix': u'172.16.103.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'4'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan104', u'prefix': u'172.16.104.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'3'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan105', u'prefix': u'172.16.105.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'2'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo1', u'prefix': u'172.16.0.1', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'13'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo2', u'prefix': u'2.2.2.2', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'82'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo3', u'prefix': u'3.3.3.3', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'83'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo4', u'prefix': u'4.4.4.4', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'84'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo98', u'prefix': u'10.98.98.1', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'15'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo99', u'prefix': u'10.99.99.1', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'16'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Eth1/5', u'prefix': u'172.16.1.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'21'}]}}
+>>> 
+
+
+>>> # ^^Both FORMATS are HARD to read.
+
+
+
+
+
+>>> # Lets compare outputs - when PRINT calls the VARIABLE:
+...
+
+
+>>> print(voutput1)
+{
+    "TABLE_intf": {
+        "ROW_intf": [
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Vlan100", 
+                "proto-state": "down", 
+                "link-state": "down", 
+                "admin-state": "down", 
+                "iod": "7", 
+                "prefix": "172.16.100.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Vlan101", 
+                "proto-state": "down", 
+                "link-state": "down", 
+                "admin-state": "down", 
+                "iod": "6", 
+                "prefix": "172.16.101.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Vlan102", 
+                "proto-state": "down", 
+                "link-state": "down", 
+                "admin-state": "down", 
+                "iod": "5", 
+                "prefix": "172.16.102.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Vlan103", 
+                "proto-state": "down", 
+                "link-state": "down", 
+                "admin-state": "down", 
+                "iod": "4", 
+                "prefix": "172.16.103.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Vlan104", 
+                "proto-state": "down", 
+                "link-state": "down", 
+                "admin-state": "down", 
+                "iod": "3", 
+                "prefix": "172.16.104.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Vlan105", 
+                "proto-state": "down", 
+                "link-state": "down", 
+                "admin-state": "down", 
+                "iod": "2", 
+                "prefix": "172.16.105.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Lo1", 
+                "proto-state": "up", 
+                "link-state": "up", 
+                "admin-state": "up", 
+                "iod": "13", 
+                "prefix": "172.16.0.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Lo2", 
+                "proto-state": "up", 
+                "link-state": "up", 
+                "admin-state": "up", 
+                "iod": "82", 
+                "prefix": "2.2.2.2", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Lo3", 
+                "proto-state": "up", 
+                "link-state": "up", 
+                "admin-state": "up", 
+                "iod": "83", 
+                "prefix": "3.3.3.3", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Lo4", 
+                "proto-state": "up", 
+                "link-state": "up", 
+                "admin-state": "up", 
+                "iod": "84", 
+                "prefix": "4.4.4.4", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Lo98", 
+                "proto-state": "up", 
+                "link-state": "up", 
+                "admin-state": "up", 
+                "iod": "15", 
+                "prefix": "10.98.98.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Lo99", 
+                "proto-state": "up", 
+                "link-state": "up", 
+                "admin-state": "up", 
+                "iod": "16", 
+                "prefix": "10.99.99.1", 
+                "ip-disabled": "FALSE"
+            }, 
+            {
+                "vrf-name-out": "default", 
+                "intf-name": "Eth1/5", 
+                "proto-state": "down", 
+                "link-state": "down", 
+                "admin-state": "down", 
+                "iod": "21", 
+                "prefix": "172.16.1.1", 
+                "ip-disabled": "FALSE"
+            }
+        ]
+    }
+}
+
+>>> # ^^Much cleaner :]
+...
+
+
+>>> print (vjson1)
+{u'TABLE_intf': {u'ROW_intf': [{u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan100', u'prefix': u'172.16.100.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'7'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan101', u'prefix': u'172.16.101.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'6'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan102', u'prefix': u'172.16.102.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'5'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan103', u'prefix': u'172.16.103.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'4'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan104', u'prefix': u'172.16.104.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'3'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Vlan105', u'prefix': u'172.16.105.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'2'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo1', u'prefix': u'172.16.0.1', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'13'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo2', u'prefix': u'2.2.2.2', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'82'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo3', u'prefix': u'3.3.3.3', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'83'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo4', u'prefix': u'4.4.4.4', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'84'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo98', u'prefix': u'10.98.98.1', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'15'}, {u'link-state': u'up', u'vrf-name-out': u'default', u'proto-state': u'up', u'intf-name': u'Lo99', u'prefix': u'10.99.99.1', u'ip-disabled': u'FALSE', u'admin-state': u'up', u'iod': u'16'}, {u'link-state': u'down', u'vrf-name-out': u'default', u'proto-state': u'down', u'intf-name': u'Eth1/5', u'prefix': u'172.16.1.1', u'ip-disabled': u'FALSE', u'admin-state': u'down', u'iod': u'21'}]}}
+>>> 
+
+
+>>> # ^^Still junky lol
+...
+
+
+>>> 
+>>> print (vjson1["TABLE_intf"]["ROW_intf"][0]["intf-name"])
+Vlan100
+
+>>> print (vjson1["TABLE_intf"]["ROW_intf"][0]["prefix"])
+172.16.100.1
+
+
+>>> # ^^But Look!!  PRINT lets you output a targetted value :]
+
+
+
+>>> quit()
+sbx-n9kv-ao# 
