@@ -11,12 +11,65 @@
 
 1277  pip3 install --upgrade paramiko
 
-1278  pip3 show paramiko
 
-1281  pip3 install netmiko
 
 ^^source: http://www.packetnotes.com/install-automation-tools/
-~ Install Several Automation Tools on Ubuntu 16.04
+~ Install Several Automation Tools on Ubuntu 16.04   - didnt work... but had other articles
+
+
+--
+what a TRAINWRECK
+
+REMOVE this crap:
+# apt-get remove python3-pip python-pip
+
+
+Then run these first 18 steps:
+~https://staging.gns3.com/community/discussion/install-netmiko-paramiko-pexpect
+
+1)
+apt-get update
+apt-get upgrade
+2)
+apt-get install python3-pip
+3)
+apt-get install python-dev
+4)
+apt-get install software-properties-common
+5)
+add-apt-repository ppa:deadsnakes/ppa
+6)
+apt-get update
+7)
+apt-get install python3.7
+8)
+pip3 install setuptools
+9)
+pip install --upgrade pip
+10)
+pip3 install --upgrade pip
+11)
+python3.7 -m pip install setuptools
+12)
+apt-get install libssl-dev
+13)
+apt-get install python3 python-dev python3-dev \
+     build-essential libssl-dev libffi-dev \
+     libxml2-dev libxslt1-dev zlib1g-dev \
+     python-pip
+14)
+apt-get install python3.7-dev
+15)
+pip3 install --upgrade --force-reinstall setuptools
+16)
+pip install --upgrade pip
+17)
+python3.7 -m pip install paramiko
+18)
+python3.7 -m pip install netmiko
+
+
+ mercifully... my scripts then started working :\
 
 
 --- Log into Nexus 9000v - DevNet Nexus always on sandbox
@@ -30,3 +83,6 @@
 
 • Example:
 • Mac: ssh -p 8181 admin@sbx-nxos-mgmt.cisco.com
+--
+
+
