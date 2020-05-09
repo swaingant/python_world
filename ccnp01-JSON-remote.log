@@ -1,18 +1,5 @@
 
 
-1255  apt-get install python3-pip
--
-
-1272  pip3 install cryptography
-
-1274  pip3 install --upgrade pip
-
-1275  pip3 install paramiko
-
-1277  pip3 install --upgrade paramiko
-
-
-
 ^^source: http://www.packetnotes.com/install-automation-tools/
 ~ Install Several Automation Tools on Ubuntu 16.04   - didnt work... but had other articles
 
