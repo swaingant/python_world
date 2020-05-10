@@ -14,3 +14,12 @@ net_connect = ConnectHandler(**nx_os)
 vout1 = net_connect.send_command('show ip int brief | json-pretty')
 print(vout1)
 
+vjson1 = json.loads(vout1)
+
+vrownum = len(vjson1['TABLE_intf']['ROW_intf'])
+
+for n in range(vrownum):
+
+	print(vjson1['TABLE_intf']['ROW_intf'][n]['intf-name'])
+	print(vjson1['TABLE_intf']['ROW_intf'][n]['prefix'])
+
