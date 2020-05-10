@@ -1,6 +1,7 @@
 #!/usr/bin/python3.7
 
 from netmiko import ConnectHandler
+import json
 
 nx_os = {
     'device_type': 'cisco_ios',
@@ -22,4 +23,8 @@ for n in range(vrownum):
 
 	print(vjson1['TABLE_intf']['ROW_intf'][n]['intf-name'])
 	print(vjson1['TABLE_intf']['ROW_intf'][n]['prefix'])
+
+print(" ")
+print("J-boogie is da man!! :]")
+print(" ")
 
