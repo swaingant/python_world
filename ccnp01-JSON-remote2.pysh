@@ -12,7 +12,13 @@ nx_os = {
 }
 
 net_connect = ConnectHandler(**nx_os)
-vout1 = net_connect.send_command('show ip int brief | json-pretty')
+
+
+vin1 = ("show ip int brief | json-pretty")
+vout1 = net_connect.send_command(vin1)
+## vout1 = net_connect.send_command('show ip int brief | json-pretty')
+
+
 print(vout1)
 
 vjson1 = json.loads(vout1)
