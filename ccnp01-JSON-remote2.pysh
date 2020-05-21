@@ -27,7 +27,7 @@ vrownum = len(vjson1['TABLE_intf']['ROW_intf'])
 
 for n in range(vrownum):
 
-	print(vjson1['TABLE_intf']['ROW_intf'][n]['intf-name'])
+	print(vjson1['TABLE_intf']['ROW_intf'][n]['intf-name']+"\t",end="")
 	print(vjson1['TABLE_intf']['ROW_intf'][n]['prefix'])
 
 print(" ")

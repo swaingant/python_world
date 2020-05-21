@@ -1,0 +1,54 @@
+#!/usr/bin/python3.7
+
+from netmiko import ConnectHandler
+import json
+
+nx_os = {
+    'device_type': 'cisco_ios',
+    'ip': 'sbx-nxos-mgmt.cisco.com',
+    'username': 'admin',
+    'password': 'Admin_1234!',
+    'port': 8181
+}
+
+net_connect = ConnectHandler(**nx_os)
+
+
+vin1 = ("show ip int brief | json-pretty")
+vin2 = ("show int status | json-pretty")
+
+
+vout1 = net_connect.send_command(vin1)
+vout2 = net_connect.send_command(vin2)
+
+
+
+print(vout1)
+
+vjson1 = json.loads(vout1)
+vjson2 = json.loads(vout2)
+
+
+vrownum = len(vjson1['TABLE_intf']['ROW_intf'])
+for n in range(vrownum):
+	print(vjson1['TABLE_intf']['ROW_intf'][n]['intf-name']+"\t",end="")
+	print(vjson1['TABLE_intf']['ROW_intf'][n]['prefix'])
+
+
+print()
+
+vrownum = len(vjson2['TABLE_interface']['ROW_interface'])
+for n in range(vrownum):
+        print(vjson2['TABLE_interface']['ROW_interface'][n]['interface']+"\t",end="")
+        print(vjson2['TABLE_interface']['ROW_interface'][n]['state']+"\t",end="")
+        print(vjson2['TABLE_interface']['ROW_interface'][n]['vlan']+"\t",end="")
+        print(vjson2['TABLE_interface']['ROW_interface'][n]['duplex']+"\t",end="")
+        print(vjson2['TABLE_interface']['ROW_interface'][n]['speed']+"\t",end="")
+        print()
+
+
+
+print(" ")
+print("J-boogie is da man!! :]")
+print(" ")
+
