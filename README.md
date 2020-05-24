@@ -1,25 +1,29 @@
 # python_world
 Summer of Python!!
 
-git status      # it will tell you 'All good'... but it COULD be Lying :]
 
-git fetch       # checks with your master branch/repo... and asks "Whats New?"
 
-git status      # NOW it will tell you what's REALLY new :]
 
-git pull        # Pulls down the 'new' files
 
-git status      # Now it will tell you 'All Good'
+git status
 
-nano Git-LOST.txt                  # make somes changes to this file, and be sure to SAVE
+git fetch 
 
-git status                         # Should tell you "hey i see some changes"
+git status
 
-git add *                          # Basically you are flagging all changed files for a push
+git pull  
 
-git status                         # Should tell you "Ready to go"
+git status
 
-git commit -m "Lets Go PUTAS"      # or use  -a   if you want to be fancy
+nano Git-LOST.txt
+
+git status       
+
+git add *        
+
+git status       
+
+git commit -m "Lets Go PUTAS"
 
 git push                           
 
