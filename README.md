@@ -1,9 +1,9 @@
 # python_world
 Summer of Python!!
 
-   
+.   
 
-     
+.     
 
 git status
 
