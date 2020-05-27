@@ -75,3 +75,6 @@ vWait = input("Press ENTER to continue")
 print("J-boogie is da man!! :]")
 print(" ")
 
+
+## jsg add a LOOP of IF-then  so that i can type as many commands as i want
+
