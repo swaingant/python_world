@@ -52,3 +52,6 @@ print(" ")
 print("J-boogie is da man!! :]")
 print(" ")
 
+
+# read in commands from a INOUT file....  and OUTPUT the the commands to an outout file :]
+
