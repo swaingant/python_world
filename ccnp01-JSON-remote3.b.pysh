@@ -14,6 +14,7 @@ nx_os = {
 net_connect = ConnectHandler(**nx_os)
 
 print()
+type(net_connect)
 print()
 
 
@@ -28,52 +29,30 @@ for n in range(vrownum):
 	print(vjson1['TABLE_intf']['ROW_intf'][n]['prefix'])
 print()
 vWait = input("Press ENTER to continue")
-
-
-
-
-
-vin2 = input("Please Enter the command:  'sh int status | json-pretty' ")
-vout2 = net_connect.send_command(vin2)
-vjson2 = json.loads(vout2)
-
-
-vrownum = len(vjson2['TABLE_interface']['ROW_interface'])
-for n in range(vrownum):
-        print(vjson2['TABLE_interface']['ROW_interface'][n]['interface']+"\t",end="")
-        print(vjson2['TABLE_interface']['ROW_interface'][n]['state']+"\t",end="")
-        print(vjson2['TABLE_interface']['ROW_interface'][n]['vlan']+"\t",end="")
-        print(vjson2['TABLE_interface']['ROW_interface'][n]['duplex']+"\t",end="")
-        print(vjson2['TABLE_interface']['ROW_interface'][n]['speed']+"\t",end="")
-        print()
 print()
-vWait = input("Press ENTER to continue")
 
 
 
 
 ## jboogy doing his thing!!!!!!
 
-print()
-vin3 = input("Please Enter ANY command :]  ")
-vin3 = (vin3 + " | json-pretty")
-vout3 = net_connect.send_command(vin3)
+vMore = ("yes")
+while vMore == "yes" :
+	vin3 = input("Please Enter ANY command :]  ")
+	vin3 = (vin3 + " | json-pretty")
+	vout3 = net_connect.send_command(vin3)
 
-#vjson3 = json.loads(vout3)
+	#vjson3 = json.loads(vout3)
 
-print()
-print(vin3)
-print(vout3)
-vWait = input("Press ENTER to continue")
+	print()
+	print("Your command was --> ",vin3, "\n")
+	print(vout3)
+	vMore = input("Do you want to enter another command? yes or Nope : ")
 
-###  j-FIN
-
-
-
-
-
-print("J-boogie is da man!! :]")
-print(" ")
+else:
+	###  j-FIN
+	print("J-boogie is da man!! :]")
+	print(" ")
 
 
 ## jsg add a LOOP of IF-then  so that i can type as many commands as i want
