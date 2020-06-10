@@ -13,10 +13,8 @@ nx_os = {
 
 net_connect = ConnectHandler(**nx_os)
 
+print(type(net_connect))
 print()
-type(net_connect)
-print()
-
 
 vin1 = input("Please Enter the command:  'sh ip int br | json-pretty'  ")
 vout1 = net_connect.send_command(vin1)
