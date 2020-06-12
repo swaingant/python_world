@@ -2,7 +2,7 @@
 
 from netmiko import ConnectHandler
 import json
-
+import time
 
 
 import requests
@@ -22,16 +22,23 @@ url= "https://ios-xe-mgmt.cisco.com:9443/restconf/data/ietf-interfaces:interface
 
 # Set yang+jsonas the data formats
 
-headers = {'Content-Type': 'application/yang-data+json',
+vheaders = {'Content-Type': 'application/yang-data+json',
 		'Accept': 'application/yang-data+json'}
 
 
 # Run GET
 
-response = requests.get(url, auth=(USER, PASS),headers=headers, verify=False)
+vresponse = requests.get(url, auth=(USER, PASS),headers=vheaders, verify=False)
 
 # Print results
 
-print('Status Code:' + str(response.status_code))
-print('Response Text:' + response.text)
+print()
+print('Status Code:' + str(vresponse.status_code))
+print()
+print(type(vresponse))
+print()
+
+vMore = input("Hit enter to conitune : ")
+time.sleep(2)
+print('Response Text:' + vresponse.text)
 

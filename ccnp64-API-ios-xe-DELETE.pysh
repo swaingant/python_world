@@ -1,0 +1,53 @@
+#!/usr/bin/python3.7
+
+import json
+import time
+
+
+import requests
+# Use self signed certs
+
+requests.packages.urllib3.disable_warnings()
+
+# Credentials
+
+USER = 'developer'
+PASS = 'C1sco12345'
+
+
+
+# interface to DELETE
+vintname = input("What is the interface you want to DELETE: ")
+print()
+
+# URL for DELETE th einterface
+url= ("https://ios-xe-mgmt.cisco.com:9443/restconf/data/ietf-interfaces:interfaces/interface=" + vintname)
+
+
+# i gues this is NULL
+payload = {}
+
+# Set yang+jsonas the data formats
+vheaders = {'Content-Type': 'application/yang-data+json',
+		'Accept': 'application/yang-data+json'}
+
+
+
+
+
+# Run DELETE interface
+
+vresponse = requests.request('DELETE',url, auth=(USER, PASS),headers=vheaders, data=payload, verify=False)
+
+# Print results
+
+print()
+print('Status Code:' + str(vresponse.status_code))
+print()
+print(type(vresponse))
+print()
+
+vMore = input("Hit enter to conitune : ")
+time.sleep(2)
+print('Response Text:' + vresponse.text)
+
