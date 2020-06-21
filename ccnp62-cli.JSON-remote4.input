@@ -1,0 +1,4 @@
+show ip int br
+show interface status
+show version
+

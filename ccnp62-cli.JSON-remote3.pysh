@@ -29,6 +29,20 @@ vjson1 = json.loads(vout1)
 vjson2 = json.loads(vout2)
 
 
+f = open("ccnp62-cli.JSON-remote3.output", "w")
+f.write(vout1)
+f.write("\n")
+f.write("\n")
+f.write(vout2)
+f.write("\n")
+f.write("\n")
+
+
+f.write(net_connect.send_command("show ip int br"))
+f.close()
+
+
+
 vrownum = len(vjson1['TABLE_intf']['ROW_intf'])
 for n in range(vrownum):
 	print(vjson1['TABLE_intf']['ROW_intf'][n]['intf-name']+"\t",end="")

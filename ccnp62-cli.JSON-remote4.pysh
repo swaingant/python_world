@@ -1,0 +1,42 @@
+#!/usr/bin/python3.7
+
+from netmiko import ConnectHandler
+from datetime import datetime
+from datetime import date
+
+nx_os = {
+    'device_type': 'cisco_ios',
+    'ip': 'sbx-nxos-mgmt.cisco.com',
+    'username': 'admin',
+    'password': 'Admin_1234!',
+    'port': 8181
+}
+
+net_connect = ConnectHandler(**nx_os)
+
+
+fin = open("ccnp62-cli.JSON-remote4.input", "r")
+fout = open("ccnp62-cli.JSON-remote4." + str(date.today())+ ".output", "a")
+
+fout.write(str(datetime.now()))
+fout.write("\n")
+fout.write("\n")
+
+
+for x in fin: 
+	vout = net_connect.send_command(x)
+	fout.write(str(x))
+	fout.write("--------------------------------\n")
+	fout.write(vout)
+	fout.write("\n")
+	fout.write("\n")
+
+fout.write("J-boogie is da man!! :]")
+fout.write("\n")
+fout.close()
+fin.close()
+print("J-boogie is da man!! :]")
+
+
+# read in commands from a INOUT file....  and OUTPUT the the commands to an outout file -  FINITO :]
+
