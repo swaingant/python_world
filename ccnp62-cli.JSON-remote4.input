@@ -1,4 +1,6 @@
 show ip int br
 show interface status
 show version
+show version | json-pretty
+show ip route
 

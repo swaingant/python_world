@@ -31,8 +31,14 @@ for x in fin:
 	fout.write("\n")
 	fout.write("\n")
 
+
+# visual spacing :]
 fout.write("J-boogie is da man!! :]")
 fout.write("\n")
+for x2 in range (0,35): 
+	fout.write("**")
+	fout.write("\n")
+
 fout.close()
 fin.close()
 print("J-boogie is da man!! :]")
